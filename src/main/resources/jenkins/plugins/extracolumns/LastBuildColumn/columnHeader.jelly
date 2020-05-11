@@ -24,15 +24,16 @@ THE SOFTWARE.
 
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core">
-    <j:set var="r" value="${%relative}"/>
-    <j:set var="a" value="${%absolute}"/>
-    <j:set var="tooltip" value="${it.buildTypeString} (${it.useRelative ? r : a})"/>
     <j:choose>
         <j:when test="${it.sortType==0}">
-            <th tooltip="${tooltip}">${%Build Start}</th>
+            <j:set var="buildTime" value="${%Build Start}"/>
         </j:when>
         <j:when test="${it.sortType==1}">
-            <th tooltip="${tooltip}">${%Build End}</th>
+            <j:set var="buildTime" value="${%Build End}"/>
         </j:when>
     </j:choose>
+    <j:set var="labelRelative" value="${%relative}"/>
+    <j:set var="labelAbsolute" value="${%absolute}"/>
+    <j:set var="tooltip" value="${it.buildTypeString} (${buildTime} / ${it.useRelative ? labelRelative : labelAbsolute})"/>
+    <th tooltip="${tooltip}">${it.buildTypeString}</th>
 </j:jelly>
