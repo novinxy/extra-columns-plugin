@@ -26,6 +26,15 @@
 <j:jelly xmlns:j="jelly:core">
   <j:set var="buildParameters" value="${it.getBuildParameters(job)}"/>
   <td>
-    <j:out value="${buildParameters}" />
+    <j:choose>
+      <j:when test="${size(buildParameters) lt 2}">
+      ${buildParameters[0]}
+      </j:when>
+      <j:otherwise>
+        <j:forEach var="buildParameter" items="${buildParameters}">
+        ${buildParameter}<br/>
+        </j:forEach>
+      </j:otherwise>
+    </j:choose>
   </td>
 </j:jelly>

@@ -33,6 +33,10 @@ import hudson.model.Run;
 import hudson.views.ListViewColumnDescriptor;
 import hudson.views.ListViewColumn;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.kohsuke.stapler.DataBoundConstructor;
 
 public class BuildParametersColumn extends ListViewColumn {
@@ -59,23 +63,23 @@ public class BuildParametersColumn extends ListViewColumn {
         return regex;
     }
 
-    public String getBuildParameters(Job<?, ?> job) {
+    public List<String> getBuildParameters(Job<?, ?> job) {
         if (job == null || job.getLastBuild() == null) {
-            return "";
+            return Collections.singletonList("");
         }
         Run<?, ?> r = job.getLastBuild();
-        StringBuilder s = new StringBuilder();
+        List<String> strings = new ArrayList<String>();
         for(Action action : r.getAllActions()) {
             if(action instanceof ParametersAction) {
                 ParametersAction pa = (ParametersAction)action;
                 for (ParameterValue p : pa.getParameters()) {
                     if(!isUseRegex() || p.getName().matches(regex)){
-                        s.append(p.getShortDescription()).append("<br/>");
+                        strings.add(p.getShortDescription());
                     }
                 }
             }
         }
-        return s.toString();
+        return strings;
     }
 
     @Extension
