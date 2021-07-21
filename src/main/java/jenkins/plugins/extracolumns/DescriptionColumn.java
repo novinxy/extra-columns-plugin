@@ -24,6 +24,7 @@
 
 package jenkins.plugins.extracolumns;
 
+import org.jenkinsci.Symbol;
 import org.kohsuke.stapler.DataBoundConstructor;
 
 import hudson.Extension;
@@ -109,6 +110,7 @@ public class DescriptionColumn extends ListViewColumn {
     }
 
     @Extension
+    @Symbol("projectDescriptionColumn")
     public static class DescriptorImpl extends ListViewColumnDescriptor {
 
         @Override
