@@ -32,11 +32,11 @@ It currently provides the following columns:
 
 Some columns have been adapted from existing plugins that in some cases are not actively maintained anymore, e.g.
 
-* [Build node plugin](https://wiki.jenkins-ci.org/display/JENKINS/Build+Node+Column+Plugin)
-* [Configure job column plugin](https://wiki.jenkins-ci.org/display/JENKINS/Configure+Job+Column+Plugin)
-* [Console column plugin](https://wiki.jenkins-ci.org/display/JENKINS/Console+Column+Plugin)
-* [Description column plugin](https://wiki.jenkins-ci.org/display/JENKINS/Description+Column+Plugin)
-* [Job type column plugin](https://wiki.jenkins-ci.org/display/JENKINS/Job+Type+Column+Plugin)
+* ~~[Build node plugin](https://plugins.jenkins.io/build-node-column)~~ (SUSPENDED)
+* [Configure job column plugin](https://plugins.jenkins.io/configure-job-column-plugin/)
+* [Console column plugin](https://plugins.jenkins.io/console-column-plugin/)
+* [Description column plugin](https://plugins.jenkins.io/description-column-plugin/)
+* [Job type column plugin](https://plugins.jenkins.io/jobtype-column/)
 
 ## Changelog & Releases
 
