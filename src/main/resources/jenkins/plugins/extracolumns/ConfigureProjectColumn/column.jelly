@@ -23,20 +23,11 @@ THE SOFTWARE.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
-    <!-- workaround for missing 16x16 setting.png in Jenkins versions below 1.430-->
-    <j:choose>
-        <j:when test="${iconSize == '16x16' and !it.isVersion1430()}">
-            <j:set var="imgUrl" value="${rootURL}/plugin/extra-columns/images"/>
-        </j:when>
-        <j:otherwise>
-            <j:set var="imgUrl" value="${imagesURL}"/>
-        </j:otherwise>
-    </j:choose>
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
     <td>
         <j:if test="${job.hasPermission(job.CONFIGURE)}">
             <a href="${jobBaseUrl}${job.shortUrl}configure">
-                <img src="${imgUrl}/${iconSize}/setting.png" title="${%Configure project}" alt="${%Configure project}" border="0"/>
+                <l:icon class="icon-gear icon-md" title="${%Configure project}" alt="${%Configure project}"/>
             </a>
         </j:if>
     </td>

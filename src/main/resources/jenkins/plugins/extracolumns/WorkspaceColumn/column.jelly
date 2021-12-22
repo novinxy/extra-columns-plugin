@@ -23,7 +23,7 @@ THE SOFTWARE.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form" xmlns:i="jelly:fmt">
+<j:jelly xmlns:j="jelly:core" xmlns:l="/lib/layout">
     <j:choose>
         <j:when test="${it.isPipelineJob(job)}">
             <j:set var="ws_url" value="${rootURL}/${job.url}${job.lastBuild.number}/ws"/>
@@ -35,7 +35,7 @@ THE SOFTWARE.
     <td>
         <j:if test="${job.hasPermission(job.WORKSPACE) and it.showWorkspace(job)}">
           <a href="${ws_url}">
-              <img src="${rootURL}/images/${iconSize}/folder.png" title="${%Workspace}" alt="${%Workspace}" border="0"/>
+              <l:icon class="icon-folder icon-md" title="${%Workspace}" alt="${%Workspace}" />
                 </a>
         </j:if>
     </td>

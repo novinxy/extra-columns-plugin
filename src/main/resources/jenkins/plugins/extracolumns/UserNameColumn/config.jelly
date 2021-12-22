@@ -23,11 +23,11 @@ THE SOFTWARE.
 -->
 
 <?jelly escape-by-default='true'?>
-<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form" xmlns:l="/lib/layout">
     <f:block>
         <tr>
             <td width="50">
-                <img src="${imagesURL}/48x48/user.png" title="${%User icon}" alt="${%User icon}" border="0"/>
+                <l:icon class="icon-person icon-xlg" title="${%User icon}" alt="${%User icon}"/>
             </td>
             <td colspan="2">
                 <p>${%This column shows the name of the user that started the last build.}</p>
