@@ -27,7 +27,7 @@ THE SOFTWARE.
     <f:block>
         <tr>
             <td width="50">
-                <l:icon class="icon-person icon-xlg" title="${%User icon}" alt="${%User icon}"/>
+                <l:icon class="icon-user icon-xlg" title="${%User icon}" alt="${%User icon}"/>
             </td>
             <td colspan="2">
                 <p>${%This column shows the name of the user that started the last build.}</p>
