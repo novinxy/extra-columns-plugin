@@ -13,22 +13,47 @@ Since additional columns do not require a lot of code, the intention is to bundl
 It currently provides the following columns:
 
 * Build description
+  * Shows the build description of the last build
+  * Options: Force column width
 * Build duration
+  * Show last build duration
+  * Options: Time since build started, average duration, average duration compact
 * Build parameters
+  * Shows either all build parameters or build parameters maching a regular expression
+  * Options: Use regular expression
 * Configure build button
+  * Show shortcut to configuration page of a job
 * Disable/enable Project button/icon
+  * Disable/enable job with one click
+  * Options: Use button or icon
 * Job type
+  * Show job type (eg. Freestyle, Maven, Multi Branch, etc)
+  * Options: Use pronoun
 * Last build
+  * Shows last build
+  * Options: Build Start/End, Build Selector, Show relative times, Show link to build
 * Last build node
+  * Shows last build node, where job was running
 * Last/current build console
+  * Shows shortcut to last/current build console
 * Last project configuration modification
+  * Shows date of last configuration modification
 * Periodic build trigger
+  * Shows last build trigger in cron format
 * Project description
+  * Shows the job/project description
+  * Options: Display job name, Trim description, Force column width
 * SCM type
+  * Shows the type of SCM that is used in the job (e.g. CVS, SVN, Git)
 * Agent or label restriction
+  * Shows the agent or label restrictions
 * Test result
+  * Shows the test results of the last build
+  * Options: Test result format
 * User name
+  * Shows the name of the user that started the last build
 * Workspace link
+  * Shows a link to the job's workspace
 
 Some columns have been adapted from existing plugins that in some cases are not actively maintained anymore, e.g.
 
@@ -63,7 +88,7 @@ __Please do not use GitHub issues!__
 
 ## Contributions
 
-Since the column API is quite simple, it's easy to get started. 
+Since the column API is quite simple, it's easy to get started.
 Contributions are more than welcome. :)
 
 ### You have an idea for a new column or want to improve an existing column?
