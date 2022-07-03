@@ -7,7 +7,7 @@ Older versions of this plugin may not be safe to use. Please review the followin
 ## Purpose
 
 This is a plugin for the [Jenkins CI server](https://jenkins.io) which provides additional columns in the main UI screen.
-It's using the [listview-column extension](https://wiki.jenkins-ci.org/display/JENKINS/Extension+points#Extensionpoints-hudson.views.ListViewColumn).
+It's using the [listview-column extension](https://www.jenkins.io/doc/developer/extensions/jenkins-core/#listviewcolumn).
 Since additional columns do not require a lot of code, the intention is to bundle multiple columns in one plugin instead of having a separate plugin for each column.
 
 It currently provides the following columns:
