@@ -3,7 +3,7 @@
     <parent>
         <groupId>org.jenkins-ci.plugins</groupId>
         <artifactId>plugin</artifactId>
-        <version>4.16</version>
+        <version>4.63</version>
     </parent>
 
     <artifactId>extra-columns</artifactId>
@@ -13,8 +13,7 @@
     <url>https://github.com/jenkinsci/extra-columns-plugin</url>
 
     <properties>
-        <jenkins.version>2.249.1</jenkins.version>
-        <java.level>8</java.level>
+        <jenkins.version>2.361.4</jenkins.version>
         <access-modifier-checker.skip>true</access-modifier-checker.skip>
     </properties>
 
@@ -34,7 +33,7 @@
     </licenses>
 
     <scm>
-        <connection>scm:git:git://github.com/jenkinsci/extra-columns-plugin.git</connection>
+        <connection>scm:git:https://github.com/jenkinsci/${project.artifactId}-plugin.git</connection>
         <developerConnection>scm:git:git@github.com:jenkinsci/extra-columns-plugin.git</developerConnection>
         <url>https://github.com/jenkinsci/extra-columns-plugin</url>
         <tag>HEAD</tag>
@@ -44,15 +43,24 @@
         <dependency>
             <groupId>org.jenkins-ci.plugins</groupId>
             <artifactId>junit</artifactId>
-            <version>1166.va_436e268e972</version>
         </dependency>
         <dependency>
             <groupId>org.jenkins-ci.plugins.workflow</groupId>
             <artifactId>workflow-job</artifactId>
-            <version>1295.v395eb_7400005</version>
             <optional>true</optional>
         </dependency>
     </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>io.jenkins.tools.bom</groupId>
+                <artifactId>bom-2.361.x</artifactId>
+                <version>2081.v85885a_d2e5c5</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <repositories>
         <repository>
             <id>repo.jenkins-ci.org</id>
